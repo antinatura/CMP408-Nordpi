@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+	<head> 
+		<title> Nordpool Hourly Spot Prices </title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}">			 
+	</head> 
+	<body> 
+		<div align="center"> 
+			<table>
+				<!-- HEADER ROW -->
+				<tr>
+				  {% for col in header %}
+				  <th>{{ col }}</th>
+				  {% endfor %}
+				</tr>
+			   
+				<!-- DATA ROWS -->
+				{% for row in rows %}
+				<tr>
+				  {% for col in row %}
+					{% if loop.nextitem == "G" %}
+					<td class="Green">{{ col }}</td>
+					{% elif loop.nextitem == "A" %}
+					<td class="Amber">{{ col }}</td>
+					{% elif loop.nextitem == "R" %}
+					<td class="Red">{{ col }}</td>
+					{% else %}
+					<td>{{ col }}</td>
+					{% endif %}
+				  {% endfor %}
+				</tr>
+				{% endfor %}
+			</table>
+		</div> 
+		<div align="center">
+			<h3>Nordpool Hourly Spot Prices for LV (and Baltics).</h3>
+			<h4>Prices are in EUR/kWh. Timezone - UTC. VAT is not included.</h4>
+			<h5>Red = highest 25% tariffs of the day, avoid heavy electricity usage; Green = lowest 25% tariffs of the day. </h5>
+			<footer>
+				<p>Author: Ance Strazdina</p>
+			</footer>
+		</div>
+	</body> 
+</html>

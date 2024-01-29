@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    padding: 3px;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+th:nth-child(3), td:nth-child(3), th:nth-child(5), td:nth-child(5) {
+    display: none;
+}
+
+.Green {
+    background-color: #008450; 
+}
+
+.Amber {
+    background-color: #EFB700; 
+}
+
+.Red {
+    background-color: #B81D13; 
+}
