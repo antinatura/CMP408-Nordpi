@@ -10,4 +10,4 @@ Nordpool spot price scrape IoT project for CMP408
 > - The Cloud component should integrate various services to form a cohesive system.
 
 ##### 2. My Implementation
-TBA
+A tool that gets Nordpool hourly electricity tariff data for the current and next day daily or when triggered with a button press. The tariff values are colour-coded based on how expensive they are (i.e., red is expensive, green is affordable, etc.). An LED light is changed every hour to a colour that corresponds with the colour-coded tariff value for that time. The coloured 2 day data is also sent to a simple site hosted on an AWS EC2 instance and displayed.
